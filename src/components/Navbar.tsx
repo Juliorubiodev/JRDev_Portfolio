@@ -30,9 +30,25 @@ export const Navbar = () => {
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+    if (!element) return;
+
+    const headerOffset = 80;
+    const elementPosition = element.getBoundingClientRect().top;
+    const offsetPosition = elementPosition + window.scrollY - headerOffset;
+
+    if (isOpen) {
       setIsOpen(false);
+      setTimeout(() => {
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth"
+        });
+      }, 300);
+    } else {
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth"
+      });
     }
   };
 
@@ -41,11 +57,10 @@ export const Navbar = () => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled 
-          ? "glass shadow-lg border-b border-border/50" 
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled || isOpen
+          ? "glass shadow-lg border-b border-border/50"
           : "bg-background/50 backdrop-blur-sm"
-      }`}
+        }`}
     >
       <div className="container-wide section-padding">
         <div className="flex items-center justify-between h-16 md:h-20">
@@ -56,9 +71,9 @@ export const Navbar = () => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <img 
-              src="/assets/jr-logo.png" 
-              alt="JR Logo" 
+            <img
+              src="/assets/jr-logo.png"
+              alt="JR Logo"
               className="h-8 md:h-9 w-auto"
             />
           </motion.button>
@@ -80,7 +95,7 @@ export const Navbar = () => {
 
           {/* Actions */}
           <div className="flex items-center gap-2">
-          {/* Language Toggle */}
+            {/* Language Toggle */}
             <Button
               variant="ghost"
               size="icon"
@@ -143,16 +158,20 @@ export const Navbar = () => {
             >
               <div className="py-4 space-y-2">
                 {navItems.map((item, index) => (
-                  <motion.button
+                  <motion.a
                     key={item.id}
-                    onClick={() => scrollToSection(item.id)}
+                    href={`#${item.id}`}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      scrollToSection(item.id);
+                    }}
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: index * 0.1 }}
                     className="block w-full text-left px-4 py-3 text-base font-medium text-muted-foreground hover:text-foreground hover:bg-secondary/50 rounded-lg transition-colors"
                   >
                     {t.nav[item.label]}
-                  </motion.button>
+                  </motion.a>
                 ))}
               </div>
             </motion.div>

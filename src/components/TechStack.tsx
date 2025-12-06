@@ -1,22 +1,22 @@
 import { motion } from "framer-motion";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { 
-  SiReact, 
-  SiNextdotjs, 
-  SiTypescript, 
-  SiJavascript, 
-  SiNodedotjs, 
-  SiTailwindcss, 
-  SiPostgresql, 
-  SiMongodb, 
-  SiDocker, 
-  SiAmazonwebservices, 
-  SiGit, 
-  SiPython, 
-  SiVuedotjs, 
-  SiKotlin, 
-  SiFlutter, 
-  SiDart 
+import {
+  SiReact,
+  SiNextdotjs,
+  SiTypescript,
+  SiJavascript,
+  SiNodedotjs,
+  SiTailwindcss,
+  SiPostgresql,
+  SiMongodb,
+  SiDocker,
+  SiAmazonwebservices,
+  SiGit,
+  SiPython,
+  SiVuedotjs,
+  SiKotlin,
+  SiFlutter,
+  SiDart
 } from "react-icons/si";
 import type { IconType } from "react-icons";
 
@@ -49,7 +49,7 @@ export const TechStack = () => {
   const { t } = useLanguage();
 
   return (
-    <section id="stack" className="py-24 md:py-32 relative overflow-hidden">
+    <section id="stack" className="py-24 md:py-32 relative scroll-mt-28 overflow-hidden">
       <div className="container-wide section-padding">
         {/* Section Header */}
         <motion.div
@@ -85,7 +85,7 @@ export const TechStack = () => {
                   className="w-10 h-10 md:w-12 md:h-12 rounded-lg mb-3 flex items-center justify-center transition-transform group-hover:scale-110"
                   style={{ backgroundColor: `${tech.color}20` }}
                 >
-                  <tech.Icon 
+                  <tech.Icon
                     className="w-6 h-6 md:w-7 md:h-7"
                     style={{ color: tech.color }}
                   />

@@ -7,7 +7,7 @@ export const Experience = () => {
   const { t } = useLanguage();
 
   return (
-    <section id="experience" className="py-24 md:py-32 relative">
+    <section id="experience" className="py-24 md:py-32 relative scroll-mt-28">
       <div className="container-wide section-padding">
         {/* Section Header */}
         <motion.div
@@ -38,15 +38,13 @@ export const Experience = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.7, ease: "easeOut", delay: index * 0.1 }}
-              className={`relative flex items-start gap-8 mb-12 ${
-                index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
-              }`}
+              className={`relative flex items-start gap-8 mb-12 ${index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
+                }`}
             >
               {/* Icon */}
               <div
-                className={`absolute left-8 md:left-1/2 -translate-x-1/2 z-10 w-12 h-12 rounded-full flex items-center justify-center border-4 border-background ${
-                  job.type === "work" ? "bg-primary" : "bg-accent"
-                }`}
+                className={`absolute left-8 md:left-1/2 -translate-x-1/2 z-10 w-12 h-12 rounded-full flex items-center justify-center border-4 border-background ${job.type === "work" ? "bg-primary" : "bg-accent"
+                  }`}
               >
                 {job.type === "work" ? (
                   <Briefcase className="w-5 h-5 text-primary-foreground" />
@@ -57,9 +55,8 @@ export const Experience = () => {
 
               {/* Content */}
               <div
-                className={`ml-24 md:ml-0 md:w-[calc(50%-2rem)] ${
-                  index % 2 === 0 ? "md:pr-8 md:text-right" : "md:pl-8"
-                }`}
+                className={`ml-24 md:ml-0 md:w-[calc(50%-2rem)] ${index % 2 === 0 ? "md:pr-8 md:text-right" : "md:pl-8"
+                  }`}
               >
                 <motion.div
                   whileHover={{ y: -4 }}
@@ -75,7 +72,7 @@ export const Experience = () => {
                   <p className="text-muted-foreground text-sm leading-relaxed mb-4">
                     {job.description}
                   </p>
-                  
+
                   {/* Action Buttons - Conditional rendering */}
                   {(job.companyUrl || job.certificateUrl) && (
                     <div className={`flex gap-2 flex-wrap ${index % 2 === 0 ? "md:justify-end" : "md:justify-start"}`}>

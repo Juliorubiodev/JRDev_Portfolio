@@ -25,7 +25,7 @@ export const Hero = () => {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-32 md:pt-0 scroll-mt-28"
     >
       <div className="container-wide section-padding relative z-10">
         <div className="max-w-4xl mx-auto text-center">

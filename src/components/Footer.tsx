@@ -13,7 +13,7 @@ export const Footer = () => {
   const { t } = useLanguage();
 
   return (
-    <footer id="contact" className="py-24 md:py-32 relative overflow-hidden">
+    <footer id="contact" className="py-24 md:py-32 relative overflow-hidden scroll-mt-28">
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <motion.div

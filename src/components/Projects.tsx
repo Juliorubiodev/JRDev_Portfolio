@@ -10,7 +10,7 @@ export const Projects = () => {
   const { t } = useLanguage();
 
   return (
-    <section id="projects" className="py-24 md:py-32 relative">
+    <section id="projects" className="py-24 md:py-32 relative scroll-mt-28">
       <div className="container-wide section-padding">
         {/* Section Header */}
         <motion.div
