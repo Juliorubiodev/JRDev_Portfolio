@@ -53,36 +53,6 @@ export const Projects = () => {
                     transition={{ duration: 0.4 }}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-card via-card/20 to-transparent" />
-
-                  {/* Quick Action Buttons */}
-                  <div className="absolute top-4 right-4 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                    {project.github && (
-                      <a
-                        href={project.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <Button variant="glass" size="icon" className="h-9 w-9 backdrop-blur-md">
-                          <Github className="h-4 w-4" />
-                        </Button>
-                      </a>
-                    )}
-                    {project.demo && (
-                      <a
-                        href={project.demo}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <Button variant="glass" size="icon" className="h-9 w-9 backdrop-blur-md">
-                          {project.demo.includes("play.google.com") ? (
-                            <Download className="h-4 w-4" />
-                          ) : (
-                            <ExternalLink className="h-4 w-4" />
-                          )}
-                        </Button>
-                      </a>
-                    )}
-                  </div>
                 </div>
 
                 {/* Content */}
@@ -142,7 +112,7 @@ export const Projects = () => {
                         </a>
                       </Button>
                     )}
-                    {(project as any).isPrivate && (
+                    {"isPrivate" in project && project.isPrivate && (
                       <Button variant="outline" size="sm" disabled className="flex-1 h-10 opacity-75 cursor-not-allowed">
                         <Lock className="h-4 w-4 mr-2" />
                         {t.projects.privateImplementation}

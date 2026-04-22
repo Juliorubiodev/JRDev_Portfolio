@@ -157,15 +157,16 @@ export const Hero = () => {
               transition={{ duration: 0.3 }}
               className="fixed bottom-8 left-1/2 -translate-x-1/2 z-20"
             >
-              <motion.div
+              <motion.button
                 animate={{ y: [0, 8, 0] }}
                 transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-                className="flex flex-col items-center gap-2 cursor-pointer"
+                className="flex flex-col items-center gap-2 cursor-pointer bg-transparent border-none"
                 onClick={() => document.getElementById("about")?.scrollIntoView({ behavior: "smooth" })}
+                aria-label={t.hero.scrollLabel}
               >
-                <span className="text-xs text-muted-foreground uppercase tracking-widest">Scroll</span>
+                <span className="text-xs text-muted-foreground uppercase tracking-widest">{t.hero.scrollText}</span>
                 <ArrowDown className="w-5 h-5 text-muted-foreground" />
-              </motion.div>
+              </motion.button>
             </motion.div>
           )}
         </AnimatePresence>

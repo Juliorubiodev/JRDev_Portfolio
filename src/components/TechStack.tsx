@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useTheme } from "@/contexts/ThemeContext";
 import {
   SiReact,
   SiNextdotjs,
@@ -23,12 +24,13 @@ import type { IconType } from "react-icons";
 interface Technology {
   name: string;
   color: string;
+  darkColor?: string;
   Icon: IconType;
 }
 
 const technologies: Technology[] = [
   { name: "React", color: "#61DAFB", Icon: SiReact },
-  { name: "Next.js", color: "#000000", Icon: SiNextdotjs },
+  { name: "Next.js", color: "#000000", darkColor: "#FFFFFF", Icon: SiNextdotjs },
   { name: "TypeScript", color: "#3178C6", Icon: SiTypescript },
   { name: "JavaScript", color: "#F7DF1E", Icon: SiJavascript },
   { name: "Node.js", color: "#339933", Icon: SiNodedotjs },
@@ -47,6 +49,10 @@ const technologies: Technology[] = [
 
 export const TechStack = () => {
   const { t } = useLanguage();
+  const { theme } = useTheme();
+
+  const getColor = (tech: Technology) =>
+    theme === "dark" && tech.darkColor ? tech.darkColor : tech.color;
 
   return (
     <section id="stack" className="py-24 md:py-32 relative scroll-mt-28 overflow-hidden">
@@ -69,7 +75,7 @@ export const TechStack = () => {
         </motion.div>
 
         {/* Tech Grid - Responsive: 2 cols mobile, 3 tablet, 4 desktop, 8 large */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-8 gap-3 md:gap-4">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 gap-3 md:gap-4">
           {technologies.map((tech, index) => (
             <motion.div
               key={tech.name}
@@ -83,11 +89,11 @@ export const TechStack = () => {
               <div className="p-4 md:p-5 rounded-xl bg-card/80 border border-border hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10 flex flex-col items-center justify-center aspect-square">
                 <div
                   className="w-10 h-10 md:w-12 md:h-12 rounded-lg mb-3 flex items-center justify-center transition-transform group-hover:scale-110"
-                  style={{ backgroundColor: `${tech.color}20` }}
+                  style={{ backgroundColor: `${getColor(tech)}20` }}
                 >
                   <tech.Icon
                     className="w-6 h-6 md:w-7 md:h-7"
-                    style={{ color: tech.color }}
+                    style={{ color: getColor(tech) }}
                   />
                 </div>
                 <p className="text-xs md:text-sm font-medium text-center text-muted-foreground group-hover:text-foreground transition-colors">
@@ -99,14 +105,14 @@ export const TechStack = () => {
         </div>
 
         {/* Marquee Row */}
-        <div className="mt-16 overflow-hidden">
+        <div className="mt-16 overflow-hidden" aria-hidden="true">
           <div className="flex gap-4 animate-marquee">
             {[...technologies, ...technologies].map((tech, index) => (
               <div
                 key={`marquee-${index}`}
                 className="flex-shrink-0 px-5 py-2.5 rounded-full bg-card/80 border border-border text-sm font-medium text-muted-foreground whitespace-nowrap flex items-center gap-2"
               >
-                <tech.Icon className="w-4 h-4" style={{ color: tech.color }} />
+                <tech.Icon className="w-4 h-4" style={{ color: getColor(tech) }} />
                 {tech.name}
               </div>
             ))}

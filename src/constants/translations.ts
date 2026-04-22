@@ -15,6 +15,8 @@ export const translations = {
       subtitle: "Computer Engineer | Full Stack & Android Developer crafting scalable solutions.",
       cta: "Get in Touch",
       viewWork: "View My Work",
+      scrollText: "Scroll",
+      scrollLabel: "Scroll down",
     },
     about: {
       title: "About Me",
@@ -161,6 +163,8 @@ export const translations = {
       subtitle: "Ingeniero Informático | Desarrollador Full Stack y Android creando soluciones escalables.",
       cta: "Contáctame",
       viewWork: "Ver Mi Trabajo",
+      scrollText: "Desplazar",
+      scrollLabel: "Desplazar hacia abajo",
     },
     about: {
       title: "Sobre Mí",

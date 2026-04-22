@@ -70,6 +70,7 @@ export const Navbar = () => {
             className="flex items-center"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
+            aria-label={language === "en" ? "Go to top" : "Ir al inicio"}
           >
             <img
               src="/assets/jr-logo.png"
@@ -101,14 +102,22 @@ export const Navbar = () => {
               size="icon"
               onClick={() => setLanguage(language === "en" ? "es" : "en")}
               className="relative w-10 h-10"
+              aria-label={language === "en" ? "Cambiar a español" : "Switch to English"}
             >
               <span className="text-sm font-bold">
-                {language.toUpperCase()}
+                {language === "en" ? "ES" : "EN"}
               </span>
             </Button>
 
             {/* Theme Toggle */}
-            <Button variant="ghost" size="icon" onClick={toggleTheme}>
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={toggleTheme}
+              aria-label={theme === "dark"
+                ? (language === "en" ? "Switch to light mode" : "Cambiar a modo claro")
+                : (language === "en" ? "Switch to dark mode" : "Cambiar a modo oscuro")}
+            >
               <AnimatePresence mode="wait">
                 {theme === "light" ? (
                   <motion.div

@@ -113,7 +113,7 @@ export const Footer = () => {
             </p>
 
             <div className="text-sm text-muted-foreground flex items-center justify-center gap-1">
-              <span>© 2025 · {t.footer?.builtWith}</span>
+              <span>© {new Date().getFullYear()} · {t.footer?.builtWith}</span>
               <a
                 href="https://react.dev"
                 target="_blank"
