@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Mail, Heart, Github, Linkedin, Download } from "lucide-react";
+import { Mail, Github, Linkedin, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { EmailCopyButton } from "@/components/EmailCopyButton";
@@ -17,10 +17,10 @@ export const Footer = () => {
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <motion.div
-          className="absolute bottom-0 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl"
+          className="absolute bottom-0 left-1/4 w-96 h-96 bg-primary/8 rounded-full blur-3xl"
           animate={{
             scale: [1, 1.2, 1],
-            opacity: [0.2, 0.3, 0.2],
+            opacity: [0.15, 0.25, 0.15],
           }}
           transition={{
             duration: 8,
@@ -39,7 +39,7 @@ export const Footer = () => {
             viewport={{ once: true, margin: "-100px" }}
             transition={smoothTransition}
           >
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 font-heading">
               {t.footer.ready}
             </h2>
             <p className="text-lg md:text-xl text-muted-foreground mb-10">
@@ -78,7 +78,7 @@ export const Footer = () => {
               href="https://github.com/Juliorubiodev"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-3 rounded-full bg-secondary hover:bg-secondary/80 text-foreground transition-all hover:scale-110"
+              className="p-3 rounded-xl bg-secondary hover:bg-primary/10 text-foreground hover:text-primary transition-all duration-200"
               whileHover={{ y: -3 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -88,7 +88,7 @@ export const Footer = () => {
               href="https://www.linkedin.com/in/juliocrubiom/"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-3 rounded-full bg-secondary hover:bg-secondary/80 text-foreground transition-all hover:scale-110"
+              className="p-3 rounded-xl bg-secondary hover:bg-primary/10 text-foreground hover:text-primary transition-all duration-200"
               whileHover={{ y: -3 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -102,9 +102,9 @@ export const Footer = () => {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ ...smoothTransition, delay: 0.25 }}
-            className="mt-16 pt-8 border-t border-border flex flex-col items-center gap-4 text-center"
+            className="mt-16 pt-8 border-t border-border/50 flex flex-col items-center gap-4 text-center"
           >
-            <h4 className="font-bold text-lg text-foreground">
+            <h4 className="font-bold text-lg text-foreground font-heading">
               {t.footer?.author}
             </h4>
 
@@ -113,17 +113,7 @@ export const Footer = () => {
             </p>
 
             <div className="text-sm text-muted-foreground flex items-center justify-center gap-1">
-              <span>© {new Date().getFullYear()} · {t.footer?.builtWith}</span>
-              <a
-                href="https://react.dev"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-medium text-foreground hover:underline underline-offset-4 decoration-primary/50 hover:decoration-primary transition-all"
-              >
-                React
-              </a>
-              <span>&</span>
-              <Heart className="w-4 h-4 text-destructive fill-destructive inline-block" />
+              <span>&copy; {new Date().getFullYear()} Julio Rubio</span>
             </div>
           </motion.div>
         </div>

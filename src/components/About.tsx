@@ -43,10 +43,10 @@ export const About = () => {
           >
             {/* Section Header */}
             <motion.div variants={itemVariants} className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 font-heading">
                 {t.about.title}
               </h2>
-              <div className="w-20 h-1 bg-primary mx-auto rounded-full" />
+              <div className="w-16 h-1 bg-primary mx-auto rounded-full" />
             </motion.div>
 
             {/* Glassmorphism Card Container */}
@@ -63,7 +63,7 @@ export const About = () => {
               >
                 <motion.p
                   variants={itemVariants}
-                  className="text-2xl md:text-3xl font-semibold gradient-text"
+                  className="text-2xl md:text-3xl font-semibold gradient-text font-heading"
                 >
                   {t.about.intro}
                 </motion.p>
@@ -91,10 +91,10 @@ export const About = () => {
                     <motion.div
                       key={index}
                       whileHover={{ y: -5, scale: 1.02 }}
-                      className="p-5 rounded-xl bg-card/50 border border-border hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary/5 group"
+                      className="p-6 rounded-xl bg-card/60 border border-border hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary/5 group"
                     >
-                      <item.icon className="w-7 h-7 text-primary mb-3 group-hover:scale-110 transition-transform" />
-                      <p className="font-semibold text-foreground text-sm">{item.label}</p>
+                      <item.icon className="w-7 h-7 text-primary mb-3 group-hover:scale-110 transition-transform duration-200" />
+                      <p className="font-bold text-foreground text-sm font-heading">{item.label}</p>
                     </motion.div>
                   ))}
                 </motion.div>

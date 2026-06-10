@@ -65,13 +65,13 @@ export const TechStack = () => {
           transition={{ duration: 0.7, ease: "easeOut" }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 font-heading">
             {t.stack.title}
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             {t.stack.subtitle}
           </p>
-          <div className="w-20 h-1 bg-primary mx-auto rounded-full mt-4" />
+          <div className="w-16 h-1 bg-primary mx-auto rounded-full mt-4" />
         </motion.div>
 
         {/* Tech Grid - Responsive: 2 cols mobile, 3 tablet, 4 desktop, 8 large */}
@@ -86,17 +86,17 @@ export const TechStack = () => {
               whileHover={{ y: -8, scale: 1.05 }}
               className="group"
             >
-              <div className="p-4 md:p-5 rounded-xl bg-card/80 border border-border hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10 flex flex-col items-center justify-center aspect-square">
+              <div className="p-4 md:p-5 rounded-xl bg-card/60 border border-border hover:border-primary/40 transition-all duration-200 hover:shadow-lg hover:shadow-primary/10 flex flex-col items-center justify-center aspect-square">
                 <div
-                  className="w-10 h-10 md:w-12 md:h-12 rounded-lg mb-3 flex items-center justify-center transition-transform group-hover:scale-110"
-                  style={{ backgroundColor: `${getColor(tech)}20` }}
+                  className="w-10 h-10 md:w-12 md:h-12 rounded-lg mb-3 flex items-center justify-center transition-transform duration-200 group-hover:scale-110"
+                  style={{ backgroundColor: `${getColor(tech)}15` }}
                 >
                   <tech.Icon
                     className="w-6 h-6 md:w-7 md:h-7"
                     style={{ color: getColor(tech) }}
                   />
                 </div>
-                <p className="text-xs md:text-sm font-medium text-center text-muted-foreground group-hover:text-foreground transition-colors">
+                <p className="text-xs md:text-sm font-medium text-center text-muted-foreground group-hover:text-foreground transition-colors duration-200 font-heading">
                   {tech.name}
                 </p>
               </div>
@@ -110,7 +110,7 @@ export const TechStack = () => {
             {[...technologies, ...technologies].map((tech, index) => (
               <div
                 key={`marquee-${index}`}
-                className="flex-shrink-0 px-5 py-2.5 rounded-full bg-card/80 border border-border text-sm font-medium text-muted-foreground whitespace-nowrap flex items-center gap-2"
+                className="flex-shrink-0 px-5 py-2.5 rounded-full bg-card/60 border border-border text-sm font-medium text-muted-foreground whitespace-nowrap flex items-center gap-2"
               >
                 <tech.Icon className="w-4 h-4" style={{ color: getColor(tech) }} />
                 {tech.name}

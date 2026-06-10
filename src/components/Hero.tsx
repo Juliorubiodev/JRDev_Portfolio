@@ -28,18 +28,18 @@ export const Hero = () => {
       className="relative min-h-screen flex items-center justify-center overflow-hidden pt-32 md:pt-0 scroll-mt-28"
     >
       <div className="container-wide section-padding relative z-10">
-        <div className="max-w-4xl mx-auto text-center">
+        <div className="max-w-5xl mx-auto text-center">
           {/* Profile Photo */}
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="mb-8 flex justify-center"
+            className="mb-10 flex justify-center"
           >
             <div className="relative">
               {/* Glow ring */}
-              <div className="absolute -inset-1 rounded-full bg-gradient-to-r from-primary via-accent to-primary opacity-75 blur-sm animate-pulse" />
-              <div className="relative w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-4 border-background shadow-xl">
+              <div className="absolute -inset-1.5 rounded-full bg-gradient-to-r from-primary to-primary/60 opacity-60 blur-md" />
+              <div className="relative w-28 h-28 md:w-36 md:h-36 rounded-full overflow-hidden border-3 border-background shadow-2xl">
                 <img
                   src={profilePhoto}
                   alt="Julio Rubio"
@@ -54,7 +54,7 @@ export const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-lg md:text-xl text-muted-foreground mb-4"
+            className="text-base md:text-lg text-muted-foreground mb-3 font-mono tracking-wide"
           >
             {t.hero.greeting}
           </motion.p>
@@ -64,7 +64,7 @@ export const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6"
+            className="text-6xl md:text-8xl lg:text-9xl font-bold mb-6 font-heading tracking-tight"
           >
             <span className="gradient-text">{t.hero.name}</span>
           </motion.h1>
@@ -74,7 +74,7 @@ export const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="text-xl md:text-2xl lg:text-3xl font-light text-foreground mb-4"
+            className="text-xl md:text-2xl lg:text-3xl font-light text-foreground mb-3 font-heading"
           >
             {t.hero.tagline}
           </motion.p>
@@ -84,7 +84,7 @@ export const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.5 }}
-            className="text-base md:text-lg text-muted-foreground mb-10 max-w-2xl mx-auto"
+            className="text-base md:text-lg text-muted-foreground mb-12 max-w-2xl mx-auto leading-relaxed"
           >
             {t.hero.subtitle}
           </motion.p>
@@ -128,7 +128,7 @@ export const Hero = () => {
               href="https://github.com/Juliorubiodev"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-3 rounded-full bg-card/80 border border-border hover:border-primary/50 text-muted-foreground hover:text-primary transition-all shadow-lg"
+              className="p-3 rounded-xl bg-card/80 border border-border hover:border-primary/50 text-muted-foreground hover:text-primary transition-all duration-200 shadow-lg"
               whileHover={{ y: -3 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -138,7 +138,7 @@ export const Hero = () => {
               href="https://www.linkedin.com/in/juliocrubiom/"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-3 rounded-full bg-card/80 border border-border hover:border-primary/50 text-muted-foreground hover:text-primary transition-all shadow-lg"
+              className="p-3 rounded-xl bg-card/80 border border-border hover:border-primary/50 text-muted-foreground hover:text-primary transition-all duration-200 shadow-lg"
               whileHover={{ y: -3 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -164,8 +164,8 @@ export const Hero = () => {
                 onClick={() => document.getElementById("about")?.scrollIntoView({ behavior: "smooth" })}
                 aria-label={t.hero.scrollLabel}
               >
-                <span className="text-xs text-muted-foreground uppercase tracking-widest">{t.hero.scrollText}</span>
-                <ArrowDown className="w-5 h-5 text-muted-foreground" />
+                <span className="text-xs text-muted-foreground uppercase tracking-[0.2em] font-heading">{t.hero.scrollText}</span>
+                <ArrowDown className="w-4 h-4 text-primary" />
               </motion.button>
             </motion.div>
           )}

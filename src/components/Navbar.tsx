@@ -57,13 +57,13 @@ export const Navbar = () => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled || isOpen
-          ? "glass shadow-lg border-b border-border/50"
-          : "bg-background/50 backdrop-blur-sm"
+      className={`fixed top-4 left-4 right-4 z-50 transition-all duration-300 rounded-2xl ${scrolled || isOpen
+          ? "glass-strong shadow-xl"
+          : "bg-background/40 backdrop-blur-md border border-transparent"
         }`}
     >
-      <div className="container-wide section-padding">
-        <div className="flex items-center justify-between h-16 md:h-20">
+      <div className="px-4 sm:px-6">
+        <div className="flex items-center justify-between h-14 md:h-16">
           {/* Logo */}
           <motion.button
             onClick={() => scrollToSection("home")}
@@ -75,7 +75,7 @@ export const Navbar = () => {
             <img
               src="/assets/jr-logo.png"
               alt="JR Logo"
-              className="h-8 md:h-9 w-auto"
+              className="h-7 md:h-8 w-auto"
             />
           </motion.button>
 
@@ -85,7 +85,7 @@ export const Navbar = () => {
               <motion.button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className="px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors rounded-lg hover:bg-secondary/50"
+                className="px-3 py-1.5 text-sm font-medium font-heading text-muted-foreground hover:text-primary transition-colors duration-200 rounded-lg hover:bg-primary/5"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -95,16 +95,16 @@ export const Navbar = () => {
           </div>
 
           {/* Actions */}
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-1">
             {/* Language Toggle */}
             <Button
               variant="ghost"
               size="icon"
               onClick={() => setLanguage(language === "en" ? "es" : "en")}
-              className="relative w-10 h-10"
+              className="relative w-9 h-9 hover:bg-primary/10 hover:text-primary transition-colors duration-200"
               aria-label={language === "en" ? "Cambiar a español" : "Switch to English"}
             >
-              <span className="text-sm font-bold">
+              <span className="text-xs font-bold font-heading">
                 {language === "en" ? "ES" : "EN"}
               </span>
             </Button>
@@ -114,6 +114,7 @@ export const Navbar = () => {
               variant="ghost"
               size="icon"
               onClick={toggleTheme}
+              className="w-9 h-9 hover:bg-primary/10 hover:text-primary transition-colors duration-200"
               aria-label={theme === "dark"
                 ? (language === "en" ? "Switch to light mode" : "Cambiar a modo claro")
                 : (language === "en" ? "Switch to dark mode" : "Cambiar a modo oscuro")}
@@ -127,7 +128,7 @@ export const Navbar = () => {
                     exit={{ rotate: 90, opacity: 0 }}
                     transition={{ duration: 0.2 }}
                   >
-                    <Moon className="h-5 w-5" />
+                    <Moon className="h-4 w-4" />
                   </motion.div>
                 ) : (
                   <motion.div
@@ -137,7 +138,7 @@ export const Navbar = () => {
                     exit={{ rotate: -90, opacity: 0 }}
                     transition={{ duration: 0.2 }}
                   >
-                    <Sun className="h-5 w-5" />
+                    <Sun className="h-4 w-4" />
                   </motion.div>
                 )}
               </AnimatePresence>
@@ -147,7 +148,7 @@ export const Navbar = () => {
             <Button
               variant="ghost"
               size="icon"
-              className="md:hidden"
+              className="md:hidden w-9 h-9 hover:bg-primary/10"
               onClick={() => setIsOpen(!isOpen)}
             >
               {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -165,7 +166,7 @@ export const Navbar = () => {
               transition={{ duration: 0.3 }}
               className="md:hidden overflow-hidden"
             >
-              <div className="py-4 space-y-2">
+              <div className="py-3 space-y-1 border-t border-border/30">
                 {navItems.map((item, index) => (
                   <motion.a
                     key={item.id}
@@ -177,7 +178,7 @@ export const Navbar = () => {
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: index * 0.1 }}
-                    className="block w-full text-left px-4 py-3 text-base font-medium text-muted-foreground hover:text-foreground hover:bg-secondary/50 rounded-lg transition-colors"
+                    className="block w-full text-left px-4 py-2.5 text-sm font-medium font-heading text-muted-foreground hover:text-primary hover:bg-primary/5 rounded-lg transition-colors duration-200"
                   >
                     {t.nav[item.label]}
                   </motion.a>

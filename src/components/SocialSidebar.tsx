@@ -11,7 +11,7 @@ export const SocialSidebar = () => {
     >
       <motion.a
         href="mailto:juliorubiodev@gmail.com"
-        className="p-3 rounded-full bg-card/80 border border-border hover:border-primary/50 text-muted-foreground hover:text-primary transition-all duration-300 shadow-lg hover:shadow-xl"
+        className="p-2.5 rounded-lg bg-card/80 border border-border hover:border-primary/50 text-muted-foreground hover:text-primary transition-all duration-200 shadow-md hover:shadow-lg"
         whileHover={{ y: -3, scale: 1.1 }}
         whileTap={{ scale: 0.95 }}
       >
@@ -21,7 +21,7 @@ export const SocialSidebar = () => {
         href="https://github.com/Juliorubiodev"
         target="_blank"
         rel="noopener noreferrer"
-        className="p-3 rounded-full bg-card/80 border border-border hover:border-primary/50 text-muted-foreground hover:text-primary transition-all duration-300 shadow-lg hover:shadow-xl"
+        className="p-2.5 rounded-lg bg-card/80 border border-border hover:border-primary/50 text-muted-foreground hover:text-primary transition-all duration-200 shadow-md hover:shadow-lg"
         whileHover={{ y: -3, scale: 1.1 }}
         whileTap={{ scale: 0.95 }}
       >
@@ -31,13 +31,13 @@ export const SocialSidebar = () => {
         href="https://www.linkedin.com/in/juliocrubiom/"
         target="_blank"
         rel="noopener noreferrer"
-        className="p-3 rounded-full bg-card/80 border border-border hover:border-primary/50 text-muted-foreground hover:text-primary transition-all duration-300 shadow-lg hover:shadow-xl"
+        className="p-2.5 rounded-lg bg-card/80 border border-border hover:border-primary/50 text-muted-foreground hover:text-primary transition-all duration-200 shadow-md hover:shadow-lg"
         whileHover={{ y: -3, scale: 1.1 }}
         whileTap={{ scale: 0.95 }}
       >
         <Linkedin className="w-5 h-5" />
       </motion.a>
-      <div className="w-px h-24 bg-border" />
+      <div className="w-px h-24 bg-border/60" />
     </motion.div>
   );
 };

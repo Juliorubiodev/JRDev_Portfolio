@@ -20,13 +20,13 @@ export const Projects = () => {
           transition={{ duration: 0.7, ease: "easeOut" }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 font-heading">
             <span className="gradient-text">{t.projects.title}</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             {t.projects.subtitle}
           </p>
-          <div className="w-20 h-1 bg-primary mx-auto rounded-full mt-4" />
+          <div className="w-16 h-1 bg-primary mx-auto rounded-full mt-4" />
         </motion.div>
 
         {/* Projects Grid */}
@@ -41,7 +41,7 @@ export const Projects = () => {
             >
               <motion.div
                 whileHover={{ y: -8 }}
-                className="h-full flex flex-col rounded-2xl glass border border-border/50 hover:border-primary/50 transition-all duration-300 hover:shadow-xl hover:shadow-primary/10 group overflow-hidden"
+                className="h-full flex flex-col rounded-2xl bg-card border border-border hover:border-primary/40 transition-all duration-200 hover:shadow-xl hover:shadow-primary/10 group overflow-hidden"
               >
                 {/* Project Image */}
                 <div className="relative h-48 md:h-56 overflow-hidden">
@@ -57,7 +57,7 @@ export const Projects = () => {
 
                 {/* Content */}
                 <div className="p-6 flex flex-col flex-1">
-                  <h3 className="text-xl font-semibold text-foreground mb-3 group-hover:text-primary transition-colors">
+                  <h3 className="text-xl font-semibold text-foreground mb-3 group-hover:text-primary transition-colors duration-200 font-heading">
                     {project.title}
                   </h3>
                   <p className="text-muted-foreground mb-4 leading-relaxed text-sm">
@@ -70,7 +70,7 @@ export const Projects = () => {
                       <Badge
                         key={techIndex}
                         variant="secondary"
-                        className="text-xs font-medium bg-secondary/80"
+                        className="text-xs font-medium bg-secondary/80 font-mono"
                       >
                         {tech}
                       </Badge>
