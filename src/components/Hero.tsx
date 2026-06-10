@@ -23,7 +23,7 @@ export const Hero = () => {
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
+            transition={{ duration: 0.5 }}
             className="mb-10 flex justify-center"
           >
             <div className="relative">
@@ -46,17 +46,18 @@ export const Hero = () => {
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            transition={{ duration: 0.5, delay: 0.05 }}
             className="text-base md:text-lg text-muted-foreground mb-3 font-mono tracking-wide"
           >
             {t.hero.greeting}
           </motion.p>
 
           {/* Name */}
+          {/* LCP element: animate transform only so the text paints immediately */}
           <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
+            initial={{ y: 20 }}
+            animate={{ y: 0 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
             className="text-6xl md:text-8xl lg:text-9xl font-bold mb-6 font-heading tracking-tight"
           >
             <span className="gradient-text">{t.hero.name}</span>
@@ -66,7 +67,7 @@ export const Hero = () => {
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
+            transition={{ duration: 0.5, delay: 0.15 }}
             className="text-xl md:text-2xl lg:text-3xl font-light text-foreground mb-3 font-heading"
           >
             {t.hero.tagline}
@@ -76,7 +77,7 @@ export const Hero = () => {
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.5 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
             className="text-base md:text-lg text-muted-foreground mb-12 max-w-2xl mx-auto leading-relaxed"
           >
             {t.hero.subtitle}
@@ -86,7 +87,7 @@ export const Hero = () => {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.6 }}
+            transition={{ duration: 0.5, delay: 0.25 }}
             className="flex flex-col sm:flex-row gap-4 justify-center items-center"
           >
             <Button variant="hero" size="xl" asChild>
@@ -104,7 +105,7 @@ export const Hero = () => {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.7 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
             className="flex justify-center mt-6 mb-10"
           >
             <EmailCopyButton variant="hero" />
@@ -114,7 +115,7 @@ export const Hero = () => {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.7 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
             className="flex justify-center gap-4 lg:hidden"
           >
             <motion.a

@@ -92,6 +92,7 @@ export const TechStack = () => {
                   style={{ backgroundColor: `${getColor(tech)}15` }}
                 >
                   <tech.Icon
+                    aria-hidden="true"
                     className="w-6 h-6 md:w-7 md:h-7"
                     style={{ color: getColor(tech) }}
                   />
@@ -112,7 +113,7 @@ export const TechStack = () => {
                 key={`marquee-${index}`}
                 className="flex-shrink-0 px-5 py-2.5 rounded-full bg-card/60 border border-border text-sm font-medium text-muted-foreground whitespace-nowrap flex items-center gap-2"
               >
-                <tech.Icon className="w-4 h-4" style={{ color: getColor(tech) }} />
+                <tech.Icon aria-hidden="true" className="w-4 h-4" style={{ color: getColor(tech) }} />
                 {tech.name}
               </div>
             ))}

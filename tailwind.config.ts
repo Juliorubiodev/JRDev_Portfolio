@@ -15,9 +15,9 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ["DM Sans", "system-ui", "sans-serif"],
-        heading: ["Space Grotesk", "system-ui", "sans-serif"],
-        mono: ["JetBrains Mono", "monospace"],
+        sans: ["DM Sans Variable", "DM Sans", "system-ui", "sans-serif"],
+        heading: ["Space Grotesk Variable", "Space Grotesk", "system-ui", "sans-serif"],
+        mono: ["JetBrains Mono Variable", "JetBrains Mono", "monospace"],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -118,6 +118,21 @@ export default {
           "0%": { transform: "translateX(0%)" },
           "100%": { transform: "translateX(-100%)" },
         },
+        "aurora-1": {
+          "0%, 100%": { transform: "translate(0, 0) scale(1)" },
+          "33%": { transform: "translate(100px, 50px) scale(1.1)" },
+          "66%": { transform: "translate(50px, 100px) scale(0.95)" },
+        },
+        "aurora-2": {
+          "0%, 100%": { transform: "translate(0, 0) scale(1)" },
+          "33%": { transform: "translate(-80px, 80px) scale(0.9)" },
+          "66%": { transform: "translate(-40px, 40px) scale(1.1)" },
+        },
+        "aurora-3": {
+          "0%, 100%": { transform: "translate(0, 0) scale(1)" },
+          "33%": { transform: "translate(60px, -60px) scale(1.15)" },
+          "66%": { transform: "translate(-30px, -30px) scale(0.9)" },
+        },
         "marquee-reverse": {
           "0%": { transform: "translateX(-100%)" },
           "100%": { transform: "translateX(0%)" },
@@ -137,6 +152,9 @@ export default {
         "gradient-shift": "gradient-shift 3s ease infinite",
         marquee: "marquee 30s linear infinite",
         "marquee-reverse": "marquee-reverse 30s linear infinite",
+        "aurora-1": "aurora-1 20s ease-in-out infinite",
+        "aurora-2": "aurora-2 25s ease-in-out infinite",
+        "aurora-3": "aurora-3 22s ease-in-out infinite",
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
