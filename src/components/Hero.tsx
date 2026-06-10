@@ -1,6 +1,5 @@
-import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { ArrowDown, Mail, Github, Linkedin } from "lucide-react";
+import { motion } from "framer-motion";
+import { Mail, Github, Linkedin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { EmailCopyButton } from "@/components/EmailCopyButton";
@@ -8,15 +7,6 @@ import profilePhoto from "@/assets/profile-photo.jpeg";
 
 export const Hero = () => {
   const { t } = useLanguage();
-  const [showScrollIndicator, setShowScrollIndicator] = useState(true);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setShowScrollIndicator(window.scrollY < 100);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   const scrollToProjects = () => {
     document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" });
@@ -152,29 +142,6 @@ export const Hero = () => {
           </motion.div>
         </div>
 
-        {/* Scroll Indicator - Fixed at bottom of viewport */}
-        <AnimatePresence>
-          {showScrollIndicator && (
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.3 }}
-              className="fixed bottom-8 left-1/2 -translate-x-1/2 z-20"
-            >
-              <motion.button
-                animate={{ y: [0, 8, 0] }}
-                transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-                className="flex flex-col items-center gap-2 cursor-pointer bg-transparent border-none"
-                onClick={() => document.getElementById("about")?.scrollIntoView({ behavior: "smooth" })}
-                aria-label={t.hero.scrollLabel}
-              >
-                <span className="text-xs text-muted-foreground uppercase tracking-[0.2em] font-heading">{t.hero.scrollText}</span>
-                <ArrowDown className="w-4 h-4 text-primary" />
-              </motion.button>
-            </motion.div>
-          )}
-        </AnimatePresence>
       </div>
     </section>
   );
