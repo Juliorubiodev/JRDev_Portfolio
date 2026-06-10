@@ -43,6 +43,9 @@ export const Hero = () => {
                 <img
                   src={profilePhoto}
                   alt="Julio Rubio"
+                  width="320"
+                  height="320"
+                  fetchPriority="high"
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -128,6 +131,7 @@ export const Hero = () => {
               href="https://github.com/Juliorubiodev"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="GitHub"
               className="p-3 rounded-xl bg-card/80 border border-border hover:border-primary/50 text-muted-foreground hover:text-primary transition-all duration-200 shadow-lg"
               whileHover={{ y: -3 }}
               whileTap={{ scale: 0.95 }}
@@ -138,6 +142,7 @@ export const Hero = () => {
               href="https://www.linkedin.com/in/juliocrubiom/"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="LinkedIn"
               className="p-3 rounded-xl bg-card/80 border border-border hover:border-primary/50 text-muted-foreground hover:text-primary transition-all duration-200 shadow-lg"
               whileHover={{ y: -3 }}
               whileTap={{ scale: 0.95 }}

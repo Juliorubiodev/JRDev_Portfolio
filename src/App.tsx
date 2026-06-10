@@ -1,14 +1,11 @@
 import { Toaster } from "@/components/ui/toaster";
-import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { MotionConfig } from "framer-motion";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "@/contexts/ThemeContext";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
-
-const queryClient = new QueryClient();
 
 const BASENAME =
   import.meta.env.BASE_URL === "/"
@@ -16,22 +13,21 @@ const BASENAME =
     : import.meta.env.BASE_URL.replace(/\/$/, ""); // "/JRDev_Portfolio"
 
 const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <ThemeProvider>
-      <LanguageProvider>
-        <TooltipProvider>
+  <ThemeProvider>
+    <LanguageProvider>
+      <TooltipProvider>
+        <MotionConfig reducedMotion="user">
           <Toaster />
-          <Sonner />
           <BrowserRouter basename={BASENAME}>
             <Routes>
               <Route path="/" element={<Index />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </BrowserRouter>
-        </TooltipProvider>
-      </LanguageProvider>
-    </ThemeProvider>
-  </QueryClientProvider>
+        </MotionConfig>
+      </TooltipProvider>
+    </LanguageProvider>
+  </ThemeProvider>
 );
 
 export default App;

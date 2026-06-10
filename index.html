@@ -19,11 +19,41 @@
   <meta property="og:url" content="https://juliorubio.dev" />
   <meta property="og:image" content="https://juliorubio.dev/assets/jr-logo.png" />
 
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:locale:alternate" content="es_ES" />
+
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Julio Rubio | Computer Engineer" />
   <meta name="twitter:description" content="Building digital experiences with code and passion." />
   <meta name="twitter:image" content="https://juliorubio.dev/assets/jr-logo.png" />
-  <link rel="icon" type="image/png" href="/assets/favicon_transparent.png" />
+  <meta name="theme-color" content="#080c16" />
+  <link rel="icon" type="image/png" href="/assets/favicon-64.png" />
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("portfolio-theme");
+        document.documentElement.classList.add(t === "light" ? "light" : "dark");
+      } catch (e) {
+        document.documentElement.classList.add("dark");
+      }
+    })();
+  </script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Julio Rubio",
+      "url": "https://juliorubio.dev",
+      "image": "https://juliorubio.dev/assets/jr-logo.png",
+      "jobTitle": "Computer Engineer",
+      "knowsAbout": ["React", "TypeScript", "Node.js", "Python", "Kotlin", "Flutter", "Android"],
+      "sameAs": [
+        "https://github.com/Juliorubiodev",
+        "https://www.linkedin.com/in/juliocrubiom/"
+      ]
+    }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />

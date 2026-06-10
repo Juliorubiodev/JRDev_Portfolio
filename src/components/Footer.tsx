@@ -78,6 +78,7 @@ export const Footer = () => {
               href="https://github.com/Juliorubiodev"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="GitHub"
               className="p-3 rounded-xl bg-secondary hover:bg-primary/10 text-foreground hover:text-primary transition-all duration-200"
               whileHover={{ y: -3 }}
               whileTap={{ scale: 0.95 }}
@@ -88,6 +89,7 @@ export const Footer = () => {
               href="https://www.linkedin.com/in/juliocrubiom/"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="LinkedIn"
               className="p-3 rounded-xl bg-secondary hover:bg-primary/10 text-foreground hover:text-primary transition-all duration-200"
               whileHover={{ y: -3 }}
               whileTap={{ scale: 0.95 }}
@@ -104,9 +106,9 @@ export const Footer = () => {
             transition={{ ...smoothTransition, delay: 0.25 }}
             className="mt-16 pt-8 border-t border-border/50 flex flex-col items-center gap-4 text-center"
           >
-            <h4 className="font-bold text-lg text-foreground font-heading">
+            <p className="font-bold text-lg text-foreground font-heading">
               {t.footer?.author}
-            </h4>
+            </p>
 
             <p className="text-muted-foreground text-sm -mt-2">
               {t.footer?.slogan}

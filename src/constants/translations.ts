@@ -74,7 +74,7 @@ export const translations = {
           certificateUrl: "",
         },
         {
-          title: "Systems Engineer Degree",
+          title: "Systems Engineering Degree",
           company: "Universidad del Magdalena",
           period: "Graduated",
           description:
@@ -216,7 +216,7 @@ export const translations = {
           company: "Universidad de Granada",
           period: "En Curso",
           description:
-            "Maestría en ingeniería informática, con enfasis en desarrollo de software, IA y gestión de proyectos.",
+            "Maestría en ingeniería informática, con énfasis en desarrollo de software, IA y gestión de proyectos.",
           type: "education",
           companyUrl: "https://www.ugr.es/",
           certificateUrl: "",
@@ -236,7 +236,7 @@ export const translations = {
       title: "Proyectos Destacados",
       subtitle: "Una selección de mi trabajo reciente",
       viewCode: "Ver Código",
-      liveDemo: "Ve al Sitio Web",
+      liveDemo: "Ver Sitio Web",
       googlePlay: "Google Play",
       privateImplementation: "Implementación Privada",
       items: [

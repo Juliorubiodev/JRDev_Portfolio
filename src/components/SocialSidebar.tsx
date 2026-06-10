@@ -11,6 +11,7 @@ export const SocialSidebar = () => {
     >
       <motion.a
         href="mailto:juliorubiodev@gmail.com"
+        aria-label="Email"
         className="p-2.5 rounded-lg bg-card/80 border border-border hover:border-primary/50 text-muted-foreground hover:text-primary transition-all duration-200 shadow-md hover:shadow-lg"
         whileHover={{ y: -3, scale: 1.1 }}
         whileTap={{ scale: 0.95 }}
@@ -21,6 +22,7 @@ export const SocialSidebar = () => {
         href="https://github.com/Juliorubiodev"
         target="_blank"
         rel="noopener noreferrer"
+        aria-label="GitHub"
         className="p-2.5 rounded-lg bg-card/80 border border-border hover:border-primary/50 text-muted-foreground hover:text-primary transition-all duration-200 shadow-md hover:shadow-lg"
         whileHover={{ y: -3, scale: 1.1 }}
         whileTap={{ scale: 0.95 }}
@@ -31,6 +33,7 @@ export const SocialSidebar = () => {
         href="https://www.linkedin.com/in/juliocrubiom/"
         target="_blank"
         rel="noopener noreferrer"
+        aria-label="LinkedIn"
         className="p-2.5 rounded-lg bg-card/80 border border-border hover:border-primary/50 text-muted-foreground hover:text-primary transition-all duration-200 shadow-md hover:shadow-lg"
         whileHover={{ y: -3, scale: 1.1 }}
         whileTap={{ scale: 0.95 }}

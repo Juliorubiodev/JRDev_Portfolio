@@ -73,8 +73,10 @@ export const Navbar = () => {
             aria-label={language === "en" ? "Go to top" : "Ir al inicio"}
           >
             <img
-              src="/assets/jr-logo.png"
+              src="/assets/jr-logo-nav.png"
               alt="JR Logo"
+              width="117"
+              height="64"
               className="h-7 md:h-8 w-auto"
             />
           </motion.button>
@@ -150,6 +152,8 @@ export const Navbar = () => {
               size="icon"
               className="md:hidden w-9 h-9 hover:bg-primary/10"
               onClick={() => setIsOpen(!isOpen)}
+              aria-expanded={isOpen}
+              aria-label={language === "en" ? "Toggle navigation menu" : "Abrir o cerrar menú de navegación"}
             >
               {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
             </Button>
