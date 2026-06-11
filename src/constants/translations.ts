@@ -56,7 +56,7 @@ export const translations = {
           company: "Casa Creativa",
           period: "Oct 2022 - May 2023",
           description:
-            "Developed responsive web applications and scalable e-commerce platforms. Implemented secure authentication and payment gateways, achieving a 40% increase in client conversion rates.",
+            "Developed responsive web applications and scalable e-commerce platforms. Implemented secure authentication and payment gateways, along with SEO optimization, achieving a 40% increase in client conversion rates.",
           type: "work",
           companyUrl: "https://www.casacreativa.io",
           certificateUrl: "",
@@ -135,10 +135,8 @@ export const translations = {
       letsTalk: "Let's build something amazing together.",
       contactMe: "Contact Me",
       downloadResume: "Download Resume",
-      copyright: "© 2025 Julio Rubio. Built with React & Love.",
       author: "Julio Rubio · Computer Engineer",
       slogan: "Let’s turn ideas into scalable software.",
-      builtWith: "Built with",
     },
     emailCopy: {
       success: "Email copied to clipboard!",
@@ -202,7 +200,7 @@ export const translations = {
           company: "Casa Creativa",
           period: "Oct 2022 - May 2023",
           description:
-            "Desarrollo de aplicaciones web responsivas y plataformas de comercio electrónico escalables. Implementación de pasarelas de pago y optimización SEO (+40% conversión).",
+            "Desarrollo de aplicaciones web responsivas y plataformas de comercio electrónico escalables. Implementación de autenticación segura y pasarelas de pago, junto con optimización SEO, logrando un aumento del 40% en la conversión de clientes.",
           type: "work",
           companyUrl: "https://www.casacreativa.io",
           certificateUrl: "",
@@ -280,10 +278,8 @@ export const translations = {
       letsTalk: "Construyamos algo increíble juntos.",
       contactMe: "Contáctame",
       downloadResume: "Descargar CV",
-      copyright: "© 2025 Julio Rubio. Hecho con React y Amor.",
       author: "Julio Rubio · Ingeniero Informático",
       slogan: "Convirtamos tus ideas en software escalable.",
-      builtWith: "Construido con",
     },
     emailCopy: {
       success: "¡Email copiado al portapapeles!",

@@ -10,7 +10,8 @@ const smoothTransition = {
 };
 
 export const Footer = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
+  const cvFile = language === "es" ? "/Julio_Rubio_CV_ES.pdf" : "/Julio_Rubio_CV_EN.pdf";
 
   return (
     <footer id="contact" className="py-24 md:py-32 relative overflow-hidden scroll-mt-28">
@@ -53,7 +54,7 @@ export const Footer = () => {
                 </a>
               </Button>
               <Button variant="outline" size="xl" asChild className="h-14 min-w-[200px]">
-                <a href="/Julio_Rubio_CV.pdf" download>
+                <a href={cvFile} download>
                   <Download className="w-5 h-5 mr-2" />
                   {t.footer.downloadResume}
                 </a>
